@@ -38,9 +38,9 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3.2.0
         with:
-          context: .
+          context: ./client
           push: true
           platforms: linux/arm64,linux/amd64
-          file: ./client/Dockerfile
+          #file: ./client/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
